@@ -25,6 +25,5 @@ rofi
 papirus-icon-theme
 virt-manager
 btop
-reflector
 curl 
 rsync

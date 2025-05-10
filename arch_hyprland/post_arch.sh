@@ -11,7 +11,7 @@ chmod -x ../scripts/add_user_to_sudoers.sh
 
 ## SET STATIC NW WITH SYSTEMD-NETWORKD
 chmod +x ../scripts/configure_network.sh
-sudo ../scripts/configure_network.sh 192.168.0.25 192.168.0.1 192.168.0.1 
+sudo ../scripts/configure_network.sh 192.168.0.35 192.168.0.1 192.168.0.1 
 chmod -x ../scripts/configure_network.sh
 
 ## ADD NEEDED PACKAGES TO ARR
@@ -20,8 +20,11 @@ myArray=(`cat ./packages.txt`)
 
 ## INSTALL PACKAGES
 sudo pacman -Syu --noconfirm 
+sudo pacman -S reflector curl rsync --noconfirm
+reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist &> /dev/null
+sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm "${myArray[@]}" 
-sudo yes 1 | pacman -S --noconfirm firefox 
+sudo yes 1 | sudo pacman -S firefox --noconfirm
 
 ## UPDATE FONT CACHE
 fc-cache
