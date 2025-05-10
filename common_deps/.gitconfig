@@ -1,3 +1,6 @@
 [user]
 	name = Shaan-somaiah
 	email = shaansomaiah@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
