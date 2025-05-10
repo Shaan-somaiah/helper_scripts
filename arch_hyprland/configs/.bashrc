@@ -25,15 +25,10 @@ fi
 unset rc
 
 if [ "$(tty)" == "/dev/tty1" ]; then
-	echo "Do you want to start Hyprland y/n"
-	read hyprYesNo
-	if [ $hyprYesNo == 'y' ]; then
-		exec Hyprland
-	fi
+    exec Hyprland
 fi
 
 fastfetch
 export EDITOR=nvim
 alias ls='ls -lrth --color=auto'
 alias vim='nvim'
-export CPPF="-Weffc++ -Werror -Wall -Wextra -std=c++20 -ggdb -pedantic-errors -Wconversion -Wsign-conversion"

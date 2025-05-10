@@ -24,7 +24,6 @@ sudo pacman -S reflector curl rsync --noconfirm
 reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist &> /dev/null
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm "${myArray[@]}" 
-sudo yes 1 | sudo pacman -S firefox --noconfirm
 
 ## UPDATE FONT CACHE
 fc-cache
@@ -38,9 +37,9 @@ sudo systemctl enable --now cronie
 sudo usermod -aG libvirt,kvm $USER
 
 ## REMOVE VIRSH DEFAULT NETWORK
-virsh net-autostart --disable default 
-virsh net-destroy default
-virsh net-undefine default
+sudo virsh net-autostart --disable default 
+sudo virsh net-destroy default
+sudo virsh net-undefine default
 
 ## SETUP FIREWALL
 sudo ufw disable

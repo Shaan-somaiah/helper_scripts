@@ -2,6 +2,7 @@ ttf-jetbrains-mono-nerd
 ttf-font-awesome
 ttf-fira-sans
 thunar
+firefox
 make
 cmake
 unzip
@@ -25,5 +26,3 @@ rofi
 papirus-icon-theme
 virt-manager
 btop
-curl 
-rsync
