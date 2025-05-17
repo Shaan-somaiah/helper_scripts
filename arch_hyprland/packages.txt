@@ -26,3 +26,4 @@ rofi
 papirus-icon-theme
 virt-manager
 btop
+nfs-utils
