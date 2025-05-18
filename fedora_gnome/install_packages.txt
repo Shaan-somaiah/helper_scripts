@@ -1,6 +1,0 @@
-gparted
-neovim
-fastfetch
-btop
-ufw
-kitty
