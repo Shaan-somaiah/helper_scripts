@@ -1,0 +1,10 @@
+fastfetch
+ufw
+git
+openssh
+nfs-utils
+man-db 
+gitea
+sqlite
+cronie
+bash-completion
