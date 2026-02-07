@@ -28,3 +28,19 @@ else
   exit 1
 fi
 
+# Start and enable openssh server
+sudo systemctl enable --now ssh
+
+# Update cache and upgrade packages
+sudo apt update
+sudo apt upgrade
+
+# Install qemu quest agent
+sudo apt update
+sudo apt install qemu-guest-agent
+
+# Truncate machine ID
+sudo truncate -s 0 /etc/machine-id
+
+# Disable cloud init
+sudo systemctl disable --now cloud-init cloud-init-local cloud-config cloud-final
