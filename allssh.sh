@@ -9,7 +9,10 @@ fi
 
 HOST_LIST="/home/shaan/scripts/host_list"
 
-while IFS= read -r host; do
-  echo "========== $host =========="
-  ssh -n -o BatchMode=yes -o ConnectTimeout=5 "$host" "$@"
+while read -r ip hostname; do
+  ## Skip comment / empty line
+  [[ -z "$ip" || "$ip" =~ ^# ]] && continue
+
+  echo "========== $ip $hostname =========="
+  ssh -n -o BatchMode=yes -o ConnectTimeout=5 "$ip" "$@"
 done < "$HOST_LIST"
